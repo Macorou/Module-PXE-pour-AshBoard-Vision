@@ -1,0 +1,18 @@
+{
+  "id":"macorou.proxmox-monitor", "name":"Proxmox Monitor", "description":"Surveille un hôte Proxmox, ses VM et ses conteneurs LXC.",
+  "author":"Macorou", "repository":"Macorou/Module-PXE-pour-AshBoard-Vision", "version":"0.1.0-beta.2", "sdk":"1.0", "entry":"ProxmoxMonitor.dll",
+  "permissions":["reseau-local","internet"], "minSize":{"columns":4,"rows":2},
+  "presets":{"compact":{"columns":4,"rows":2},"ideal":{"columns":6,"rows":4}},
+  "settings":[
+    {"kind":"text","key":"address","label":"Adresse du serveur","maxLength":256,"placeholder":"https://pve.exemple.fr:8006","help":"Une seule connexion partagée entre les tuiles. Indique une adresse HTTPS directe, puis teste la connexion."},
+    {"kind":"secret","key":"token","label":"Jeton API complet","help":"utilisateur@realm!nom-du-jeton=secret. Aucun mot de passe du compte. Le jeton est partagé entre les tuiles."},
+    {"kind":"toggle","key":"allowSelfSigned","label":"Certificat auto-signé","default":false,"help":"Mémorise le premier certificat non reconnu pendant un test explicite. Un certificat différent sera refusé."},
+    {"kind":"action","key":"testConnection","label":"Tester la connexion"},
+    {"kind":"action","key":"forgetCertificate","label":"Oublier le certificat mémorisé","confirm":"Oublier ce certificat et demander un nouveau test de connexion ?","visibleWhen":{"key":"allowSelfSigned","value":"true"}},
+    {"kind":"choice","key":"layout","label":"Présentation","default":"balanced","options":[{"value":"balanced","label":"Équilibrée"},{"value":"resources","label":"Ressources"},{"value":"mosaic","label":"Mosaïque"}]},
+    {"kind":"toggle","key":"forceCompact","label":"Toujours utiliser le compact","default":false},
+    {"kind":"lookup","key":"disk","label":"Disque affiché","emptyLabel":"Système Proxmox","searchable":false,"help":"Après un test réussi, clique sur Actualiser ou enregistre, ferme complètement puis rouvre la fenêtre des paramètres pour charger les stockages. Le nom du serveur est indiqué dans la liste."},
+    {"kind":"number","key":"refreshSeconds","label":"Actualisation (secondes)","min":5,"max":60,"default":10},
+    {"kind":"number","key":"pageSeconds","label":"Durée d’une page (secondes)","min":3,"max":30,"default":8}
+  ]
+}

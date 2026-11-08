@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/ProxmoxMonitor/ProxmoxMonitor.csproj" />
+  <Project Path="tests/ProxmoxMonitor.Tests/ProxmoxMonitor.Tests.csproj" />
+</Solution>

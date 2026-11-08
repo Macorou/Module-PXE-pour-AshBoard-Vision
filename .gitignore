@@ -1,0 +1,10 @@
+.superpowers/
+docs/superpowers/
+.sdk-feed/
+.packages/
+.dotnet-home/
+artifacts/
+**/bin/
+**/obj/
+**/TestResults/
+.vs/
