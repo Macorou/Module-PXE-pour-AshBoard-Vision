@@ -83,7 +83,7 @@ Les PNG synthétiques se trouvent dans `artifacts/previews`, les sorties du banc
 
 ## Distribution et licence
 
-Identifiant permanent : `macorou.proxmox-monitor`. Dépôt des sources et des versions : [Macorou/Module-PXE-pour-AshBoard-Vision](https://github.com/Macorou/Module-PXE-pour-AshBoard-Vision).
+Dépôt des sources et des versions : [Macorou/Module-PXE-pour-AshBoard-Vision](https://github.com/Macorou/Module-PXE-pour-AshBoard-Vision).
 
 Chaque version GitHub portant `v<version>` fournit le `.avmod`, son `.sha256` et les sources correspondantes. AshBoard Vision gère les propositions de mises à jour selon son SDK et les versions effectivement publiées.
 
