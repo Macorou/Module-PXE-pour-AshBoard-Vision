@@ -1,6 +1,12 @@
-# Validation de Proxmox Monitor 0.1.0-beta.2
+# Validation de Proxmox Monitor 0.1.0
 
 Cette fiche distingue les vérifications locales d’un essai sur une installation réelle.
+
+## Promotion en version stable 0.1.0
+
+La version 0.1.0 reprend le code fonctionnel de la bêta 2, avec sa correction du sélecteur de disque confirmée par l’utilisateur. Seuls le numéro de version, les métadonnées de distribution et les références de téléchargement changent pour la promotion stable demandée le 8 novembre 2026.
+
+Le manifeste, la bibliothèque et le paquet portent tous la version `0.1.0`. La validation Release réussit avec **175/175 tests**, aucun ignoré, aucune erreur ni avertissement de compilation. Le contrôle officiel confirme la compatibilité SDK 1.0, les six PNG, le maintien en fonctionnement avec permissions réseau refusées et l’arrêt propre inférieur à 0,1 s. Les limites de validation Proxmox et les points mineurs documentés ci-dessous restent applicables.
 
 ## Correction du sélecteur de stockage — bêta 2
 

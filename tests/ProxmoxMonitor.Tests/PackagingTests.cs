@@ -7,7 +7,7 @@ public sealed class PackagingTests
     private static readonly string Root=Path.GetFullPath(Path.Combine(AppContext.BaseDirectory,"../../../../../"));
     private static async Task<(int Exit,string Output)> Run(Dictionary<string,string>? changes=null,bool validateOnly=true,string? output=null)
     {
-        var values=new Dictionary<string,string>{{"ModuleId","macorou.proxmox-monitor"},{"Author","Macorou"},{"Repository","Macorou/Module-PXE-pour-AshBoard-Vision"},{"Version","0.1.0-beta.2"}};
+        var values=new Dictionary<string,string>{{"ModuleId","macorou.proxmox-monitor"},{"Author","Macorou"},{"Repository","Macorou/Module-PXE-pour-AshBoard-Vision"},{"Version","0.1.0"}};
         if(changes is not null)foreach(var pair in changes)values[pair.Key]=pair.Value;
         var info=new ProcessStartInfo("pwsh"){WorkingDirectory=Root,RedirectStandardOutput=true,RedirectStandardError=true,UseShellExecute=false,CreateNoWindow=true};
         foreach(var argument in new[]{"-NoLogo","-NoProfile","-NonInteractive","-File",Path.Combine(Root,"scripts","pack.ps1")})info.ArgumentList.Add(argument);
@@ -46,7 +46,7 @@ public sealed class PackagingTests
     {
         var output=Path.Combine(Root,"artifacts","package-tests",Guid.NewGuid().ToString("N"));
         var result=await Run(validateOnly:false,output:output);Assert.True(result.Exit==0,result.Output);
-        var package=Path.Combine(output,"macorou.proxmox-monitor-0.1.0-beta.2.avmod");Assert.True(File.Exists(package),result.Output);
+        var package=Path.Combine(output,"macorou.proxmox-monitor-0.1.0.avmod");Assert.True(File.Exists(package),result.Output);
         Assert.True(File.Exists(package+".sha256"));
         using var zip=ZipFile.OpenRead(package);Assert.Equal(new[]{"LICENSE","ProxmoxMonitor.dll","manifest.json"},zip.Entries.Select(e=>e.FullName).Order(StringComparer.Ordinal));
         using var reader=new StreamReader(zip.GetEntry("manifest.json")!.Open());var manifest=await reader.ReadToEndAsync();

@@ -1,6 +1,6 @@
 {
   "id":"macorou.proxmox-monitor", "name":"Proxmox Monitor", "description":"Surveille un hôte Proxmox, ses VM et ses conteneurs LXC.",
-  "author":"Macorou", "repository":"Macorou/Module-PXE-pour-AshBoard-Vision", "version":"0.1.0-beta.2", "sdk":"1.0", "entry":"ProxmoxMonitor.dll",
+  "author":"Macorou", "repository":"Macorou/Module-PXE-pour-AshBoard-Vision", "version":"0.1.0", "sdk":"1.0", "entry":"ProxmoxMonitor.dll",
   "permissions":["reseau-local","internet"], "minSize":{"columns":4,"rows":2},
   "presets":{"compact":{"columns":4,"rows":2},"ideal":{"columns":6,"rows":4}},
   "settings":[

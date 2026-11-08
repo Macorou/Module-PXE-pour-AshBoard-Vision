@@ -2,7 +2,7 @@
 
 Module communautaire de **Macorou** pour surveiller un serveur **Proxmox VE autonome**, ses VM QEMU et ses conteneurs LXC dans AshBoard Vision.
 
-Version actuelle : **0.1.0-beta.2**. Contrat requis : **SDK AshBoard Vision 1.0**. VE 8/9 sont les cibles de compatibilité ; leur compatibilité en exploitation reste à valider. Voir [les vérifications](docs/validation.md).
+Version stable actuelle : **0.1.0**. Contrat requis : **SDK AshBoard Vision 1.0**. VE 8/9 sont les cibles de compatibilité ; leur compatibilité en exploitation reste à valider. Voir [les vérifications](docs/validation.md).
 
 ## Fonctions
 
@@ -21,9 +21,9 @@ Le module utilise uniquement des GET. Il n’envoie aucune commande aux invités
 
 ## Installer
 
-[Télécharger la bêta 0.1.0-beta.2 et son empreinte SHA256](https://github.com/Macorou/Module-PXE-pour-AshBoard-Vision/releases/tag/v0.1.0-beta.2).
+[Télécharger la version stable 0.1.0 et son empreinte SHA256](https://github.com/Macorou/Module-PXE-pour-AshBoard-Vision/releases/tag/v0.1.0).
 
-Le fichier à installer est `macorou.proxmox-monitor-0.1.0-beta.2.avmod`. Son fichier `.sha256` permet de contrôler l’intégrité. Pour utiliser le module, aucun SDK de développement n’est nécessaire.
+Le fichier à installer est `macorou.proxmox-monitor-0.1.0.avmod`. Son fichier `.sha256` permet de contrôler l’intégrité. Pour utiliser le module, aucun SDK de développement n’est nécessaire.
 
 1. Ouvre le `.avmod`, ou utilise « Installer un module… » dans les paramètres d’AshBoard Vision.
 2. Accorde **Réseau local** pour un serveur privé et/ou **Internet** pour un serveur distant, selon sa classification Windows.
@@ -72,7 +72,7 @@ Pré requis : Windows x64, SDK .NET 10 et outils officiels AshBoard Vision 1.0.0
 .\scripts\prepare-sdk.ps1 -SdkDirectory 'C:\Program Files\Ashboard Vision\sdk'
 dotnet restore .\ProxmoxMonitor.slnx
 .\scripts\verify.ps1
-.\scripts\pack.ps1 -ModuleId 'macorou.proxmox-monitor' -Author 'Macorou' -Repository 'Macorou/Module-PXE-pour-AshBoard-Vision' -Version '0.1.0-beta.2'
+.\scripts\pack.ps1 -ModuleId 'macorou.proxmox-monitor' -Author 'Macorou' -Repository 'Macorou/Module-PXE-pour-AshBoard-Vision' -Version '0.1.0'
 ```
 
 Les paquets SDK sont copiés dans `.sdk-feed`, les autres dépendances dans `.packages`, sans modifier les sources NuGet globales. Les versions transitives sont verrouillées. Si les dépendances exactes sont déjà présentes dans un cache local mais que l’accès réseau de développement est restreint, `verify.ps1 -OfflineFallback '<dossier du cache NuGet>'` peut les relire sans désactiver la validation TLS.
